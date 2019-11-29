@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Capture";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Capture</h2>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/3.0.0/toaster.min.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.2.0/angular-animate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/3.0.0/toaster.min.js"></script>
+
+<toaster-container></toaster-container>
+
+<div ng-controller="myController">
+    <button style="color:#808080" ng-click="pop()">Show a Toaster</button>
+</div>
+
+<script>
+    angular.module('main', ['toaster', 'ngAnimate'])
+    .controller('myController', function($scope, toaster) {
+        $scope.pop = function(){
+            toaster.pop('info', "title", "text");
+        };
+    });
+</script>
+<style>
+    body {
+        color: white;
+        background: black;
+    }
+      .table-hover > tbody > tr:hover {
+    background-color: #7d5a5a;
+}
+              .btn-primary {
+    color: #fff;
+    background-color: #2f2f30;
+    border-color: #e8e8e8;
+}
+      
+element.style {
+}
+.btn-primary:active:hover, .btn-primary.active:hover, .open > .dropdown-toggle.btn-primary:hover, .btn-primary:active:focus, .btn-primary.active:focus, .open > .dropdown-toggle.btn-primary:focus, .btn-primary:active.focus, .btn-primary.active.focus, .open > .dropdown-toggle.btn-primary.focus {
+    color: #fff;
+    background-color: #878e90;
+    border-color: #cccccc;
+}
+</style>

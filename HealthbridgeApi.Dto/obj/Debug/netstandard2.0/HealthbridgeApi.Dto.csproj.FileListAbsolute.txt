@@ -1,0 +1,16 @@
+C:\Development\HealthBridge\HealthbridgeApi.Dto\bin\Debug\netstandard2.0\HealthbridgeApi.Dto.deps.json
+C:\Development\HealthBridge\HealthbridgeApi.Dto\bin\Debug\netstandard2.0\HealthbridgeApi.Dto.dll
+C:\Development\HealthBridge\HealthbridgeApi.Dto\bin\Debug\netstandard2.0\HealthbridgeApi.Dto.pdb
+C:\Development\HealthBridge\HealthbridgeApi.Dto\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.dll
+C:\Development\HealthBridge\HealthbridgeApi.Dto\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Development\HealthBridge\HealthbridgeApi.Dto\bin\Debug\netstandard2.0\System.Security.dll
+C:\Development\HealthBridge\HealthbridgeApi.Dto\bin\Debug\netstandard2.0\System.ComponentModel.DataAnnotations.xml
+C:\Development\HealthBridge\HealthbridgeApi.Dto\bin\Debug\netstandard2.0\System.Configuration.xml
+C:\Development\HealthBridge\HealthbridgeApi.Dto\bin\Debug\netstandard2.0\System.Security.xml
+C:\Development\HealthBridge\HealthbridgeApi.Dto\obj\Debug\netstandard2.0\HealthbridgeApi.Dto.csproj.CoreCompileInputs.cache
+C:\Development\HealthBridge\HealthbridgeApi.Dto\obj\Debug\netstandard2.0\HealthbridgeApi.Dto.AssemblyInfoInputs.cache
+C:\Development\HealthBridge\HealthbridgeApi.Dto\obj\Debug\netstandard2.0\HealthbridgeApi.Dto.AssemblyInfo.cs
+C:\Development\HealthBridge\HealthbridgeApi.Dto\obj\Debug\netstandard2.0\HealthbridgeApi.Dto.csproj.CopyComplete
+C:\Development\HealthBridge\HealthbridgeApi.Dto\obj\Debug\netstandard2.0\HealthbridgeApi.Dto.dll
+C:\Development\HealthBridge\HealthbridgeApi.Dto\obj\Debug\netstandard2.0\HealthbridgeApi.Dto.pdb
+C:\Development\HealthBridge\HealthbridgeApi.Dto\obj\Debug\netstandard2.0\HealthbridgeApi.Dto.csprojAssemblyReference.cache

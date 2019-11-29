@@ -1,0 +1,208 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Patients invoice detail</h2>
+
+<fieldset>
+    <legend > </legend>
+    <div ng-app="app" ng-controller="InvoiceCtr">
+        <div class="table-responsive">
+
+            <table class="table table-hover table-bordered">
+
+                <tbody>
+                    <tr>
+                        <td>Invoice Date</td>
+                        <td ng-show="!EditMode && !currentInvoiceId==0">{{invoice.InvoiceDateTime}}</td>
+                        <td ng-show="EditMode || currentInvoiceId==0">
+                            <input type="text" name="InvoiceDateTime" class="form-control" ng-model="invoice.InvoiceDateTime" required ng-maxlength="50">
+                        </td>
+                    </tr>
+                    <tr ng-show="currentInvoiceId > 0">
+                        <td>
+                            Patient
+                        </td>
+                        <td>
+                            {{invoice.FirstName}} {{invoice.LastName}}
+                        </td>
+                    </tr>
+
+                    <tr ng-show="currentInvoiceId===0">
+                        <td>
+                            Patient Number
+                        </td>
+                        <td>
+                            <input type="text" name="InvoiceDateTime" class="form-control" ng-model="invoice.PatientId" required ng-maxlength="50">
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+            <table class="table table-hover  table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Code</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Total</th>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in invoice.InvoiceLine">
+                        <td ng-show="!EditMode && !item.InvoiceLineId==0">{{item.Qty}}</td>
+                        <td ng-show="EditMode || item.InvoiceLineId==0">
+                            <input type="text" name="qty" class="form-control" ng-model="item.Qty" required ng-maxlength="50">
+                        </td>
+
+                        <td ng-show="!EditMode && !item.InvoiceLineId==0">{{item.Code}}</td>
+                        <td ng-show="EditMode || item.InvoiceLineId==0">
+                            <input type="text" name="code" class="form-control" ng-model="item.Code" required ng-maxlength="50">
+                        </td>
+
+                        <td ng-show="!EditMode && !item.InvoiceLineId==0">{{item.Description}}</td>
+                        <td ng-show="EditMode || item.InvoiceLineId==0">
+                            <input type="text" name="discription" class="form-control" ng-model="item.Description" required ng-maxlength="50">
+                        </td>
+
+                        <td ng-show="!EditMode && !item.InvoiceLineId==0">{{item.LineTotal}}</td>
+                        <td ng-show="EditMode || item.InvoiceLineId==0">
+                            <input type="text" name="total" class="form-control" ng-model="item.LineTotal" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" required>
+                        </td>
+                        <td class="btn btn-danger"><button ng-click="DeleteItem(item)">x</button></td>
+                    </tr>
+
+                </tbody>
+                <tfoot>
+                    <tr ng-show="invoice.InvoiceLine.length" style="font-weight:bold">
+                        <td>{{getTotalQty()}}</td>
+                        <td></td>
+                        <td></td>
+                        <td>{{getTotal()}}</td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <td><button class="btn-primary" ng-click="AddLineItem()">Add Item</button></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                </tfoot>
+            </table>
+            <br />
+            <table class="table table-hover table-bordered">
+
+                <tbody>
+                    <tr>
+                        <td><button class="btn btn-primary" ng-click="AddLineNewInvoice(invoice)">New Invoice</button></td>
+                        <td><button class=" btn btn-primary" ng-click="EditLineItem(invoice)">Update Line Items</button></td>
+                        <td><button class="btn btn-primary" ng-click="cancel()">Cancel</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button class="btn btn-success" ng-click="saveChanges(invoice)" ng-disabled="modeType === ''">Save Changes</button>
+
+    </div>
+</fieldset>
+<toaster-container></toaster-container>
+
+<script src="~/Scripts/angular.js"></script>
+<link href="~/Content/toaster.min.css" rel="stylesheet" />
+<script src="~/Scripts/angular.js"></script>
+
+<script src="~/Scripts/toaster.min.js"></script>
+<script src="~/Scripts/angular-animate.min.js"></script>
+<script src="~/Scripts/toaster.min.js"></script>
+
+
+<script src="~/Scripts/App/Controllers/InvoiceDetails.js"></script>
+
+
+
+<script>
+//    (function () {
+//    //Module
+//    var app = angular.module('app', []);
+//    // Controller
+//    app.controller('InvoiceCtr', function ($scope) {
+
+//         $scope.invoice = {
+//            PatientId: 14,
+//            InvoiceDateTime: '2019-11-25',
+//            FirstName: 'Terro',
+//            LastName: 'Marvel',
+//            InvoiceLine: [
+//                {
+//                    InvoiceLineId: 5,
+//                    InvoiceId: 9,
+//                    Qty: 1.0,
+//                    Code: 'AA4',
+//                    Description: 'Sterilizer',
+//                    LineTotal: 20.0000
+//                },
+//                {
+//                    InvoiceLineId: 6,
+//                    InvoiceId: 9,
+//                    Qty: 1.0,
+//                    Code: 'AB4',
+//                    Description: 'morph',
+//                    LineTotal: 50.0000
+//                }
+//            ]
+//        };
+//    });
+
+//})();
+</script>
+<style>
+    body {
+    color: white;
+    background: black;
+}
+    legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: inherit;
+    color: #ffffff !important;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+      .table-hover > tbody > tr:hover {
+    background-color: #7d5a5a;
+}
+      .btn-primary {
+    color: #fff;
+    background-color: #2f2f30;
+    border-color: #e8e8e8;
+}
+      
+element.style {
+}
+.btn-primary:active:hover, .btn-primary.active:hover, .open > .dropdown-toggle.btn-primary:hover, .btn-primary:active:focus, .btn-primary.active:focus, .open > .dropdown-toggle.btn-primary:focus, .btn-primary:active.focus, .btn-primary.active.focus, .open > .dropdown-toggle.btn-primary.focus {
+    color: #fff;
+    background-color: #878e90;
+    border-color: #cccccc;
+}
+.btn-danger {
+    color: #fa1313;
+    background-color: #8c8686;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #7e868d;
+    border-color: #ececec;
+}
+
+</style>

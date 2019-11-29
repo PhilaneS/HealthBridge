@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">Edit Patient Information</h2>
+<br>
+<hr />
+<div ng-app="app" ng-controller="PatientCtr">
+    <form name="EditForm" novalidate>
+        <table class="table table-bordered table-responsive">
+
+            <tr>
+                <td>First Name</td>
+                <td class="form-group">
+                    <input class="form-group" type="text" ng-model="FirstName" name="eFirstName" required autofocus />
+                    <span class="error" ng-show="(EditForm.FirstName.$dirty || submitted) && EditForm.FirstName.$error.required">First Name Is Required</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>
+                    <input class="textbox" type="text" ng-model="LastName" name="eLastName" required autofocus />
+                    <span class="error" ng-show="(EditForm.LastName.$dirty || submitted) && EditForm.LastName.$error.required">Last Name Is Required</span>
+                </td>
+            </tr>
+            <tr>
+                <td>ID Number</td>
+                <td>
+                    <input class="textbox" type="text" ng-model="IdNumber" name="eIdNumber" required autofocus />
+                    <span class="error" ng-show="(EditForm.IdNumber.$dirty || submitted) && EditForm.IdNumber.$error.required">ID Number Is Required</span>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" class="btn btn-success" ng-click="UpdatePatient()" value="Update" />
+        <p class="btn btn-primary">@Html.ActionLink("Back to List", "Index", null, new { style = "color:white" })</p>
+    </form>
+    
+</div>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/App/PatientDetail.js"></script>
+<style>
+    body {
+        color: white;
+        background: black;
+    }
+    h2 {
+    color: #ffffff;
+}
+       .table-hover > tbody > tr:hover {
+    background-color: #7d5a5a;
+}
+             .btn-primary {
+    color: #fff;
+    background-color: #2f2f30;
+    border-color: #e8e8e8;
+}
+      
+element.style {
+}
+.btn-primary:active:hover, .btn-primary.active:hover, .open > .dropdown-toggle.btn-primary:hover, .btn-primary:active:focus, .btn-primary.active:focus, .open > .dropdown-toggle.btn-primary:focus, .btn-primary:active.focus, .btn-primary.active.focus, .open > .dropdown-toggle.btn-primary.focus {
+    color: #fff;
+    background-color: #878e90;
+    border-color: #cccccc;
+}
+input, select, textarea {
+    max-width: 280px;
+    color: black;
+}
+</style>

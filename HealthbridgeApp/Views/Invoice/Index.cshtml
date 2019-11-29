@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <h2>All patients invoice list</h2>
+<fieldset>
+    <legend> </legend>
+    <div ng-app="app" ng-controller="InvoiceCtr">
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Invoice Date</th>
+                        <th scope="col">Patient</th>
+                        <th scope="col">Invoice Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="invoice in InvoiceList" ng-click="RedirectToDetails(invoice.InvoiceId)" >
+                        <td >{{invoice.InvoiceDateTime}}</td>
+                        <td>{{invoice.FirstName}} {{invoice.LastName}}</td>
+                        <td>{{invoice.InvoiceTotal}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div><button ng-show="invoice ===null" class="btn-primary" ng-click="RedirectToDetails(0)">Add Patient Invoive</button></div>
+        </div>
+    </div>
+</fieldset>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/App/Controllers/Invoice.js"></script>
+<style>
+    body {
+        color: white;
+        background: black;
+    }
+     legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: inherit;
+    color: #ffffff !important;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+   .table-hover > tbody > tr:hover {
+    background-color: #7d5a5a;
+}
+         .btn-primary {
+    color: #fff;
+    background-color: #2f2f30;
+    border-color: #e8e8e8;
+}
+      
+element.style {
+}
+.btn-primary:active:hover, .btn-primary.active:hover, .open > .dropdown-toggle.btn-primary:hover, .btn-primary:active:focus, .btn-primary.active:focus, .open > .dropdown-toggle.btn-primary:focus, .btn-primary:active.focus, .btn-primary.active.focus, .open > .dropdown-toggle.btn-primary.focus {
+    color: #fff;
+    background-color: #878e90;
+    border-color: #cccccc;
+}
+.btn-danger {
+    color: #fa1313;
+    background-color: #8c8686;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #545e66;
+    border-color: #abc1d3;
+}
+</style>

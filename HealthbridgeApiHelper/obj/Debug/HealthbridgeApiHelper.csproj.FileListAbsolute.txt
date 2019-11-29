@@ -1,0 +1,13 @@
+C:\Development\HealthBridge\HealthbridgeApiHelper\bin\Debug\HealthbridgeApiHelper.dll
+C:\Development\HealthBridge\HealthbridgeApiHelper\bin\Debug\HealthbridgeApiHelper.pdb
+C:\Development\HealthBridge\HealthbridgeApiHelper\bin\Debug\HealthbridgeApi.Dto.dll
+C:\Development\HealthBridge\HealthbridgeApiHelper\bin\Debug\Newtonsoft.Json.dll
+C:\Development\HealthBridge\HealthbridgeApiHelper\bin\Debug\RestSharp.dll
+C:\Development\HealthBridge\HealthbridgeApiHelper\bin\Debug\HealthbridgeApi.Dto.pdb
+C:\Development\HealthBridge\HealthbridgeApiHelper\bin\Debug\Newtonsoft.Json.xml
+C:\Development\HealthBridge\HealthbridgeApiHelper\bin\Debug\RestSharp.xml
+C:\Development\HealthBridge\HealthbridgeApiHelper\obj\Debug\HealthbridgeApiHelper.csprojAssemblyReference.cache
+C:\Development\HealthBridge\HealthbridgeApiHelper\obj\Debug\HealthbridgeApiHelper.csproj.CoreCompileInputs.cache
+C:\Development\HealthBridge\HealthbridgeApiHelper\obj\Debug\HealthbridgeApiHelper.csproj.CopyComplete
+C:\Development\HealthBridge\HealthbridgeApiHelper\obj\Debug\HealthbridgeApiHelper.dll
+C:\Development\HealthBridge\HealthbridgeApiHelper\obj\Debug\HealthbridgeApiHelper.pdb
